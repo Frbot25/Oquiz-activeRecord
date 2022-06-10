@@ -1,0 +1,22 @@
+UTILISATEUR: email, password, nom, prenom
+crée, 0N UTILISATEUR, 11 QUIZ
+QUIZ: titre, description, date_creation
+concerne, 1N QUIZ, 0N THEME
+THEME: nom
+
+possède, 0N QUIZ, 11 QUESTION
+
+NIVEAU: nom
+définit, 0N NIVEAU, 11 QUESTION
+QUESTION: libellé, anecdote, wiki
+a pour possibilité, 0N QUESTION, 11 REPONSE
+
+
+:
+:
+valide, 11 QUESTION, 01 REPONSE
+REPONSE: texte
+
+ENTITE: discriminant, attribut2, attribut3
+association_cardinalites, 0N ENTITE, 11 ENTITE2
+ENTITE2: discriminant, attribut2, attribut3
