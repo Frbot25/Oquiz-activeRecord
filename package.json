@@ -24,7 +24,11 @@
   "homepage": "https://github.com/Frbot25/Oquiz-activeRecord#readme",
   "dependencies": {
     "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
     "express": "^4.18.1",
     "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }

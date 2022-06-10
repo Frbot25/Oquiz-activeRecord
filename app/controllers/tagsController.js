@@ -10,10 +10,11 @@ const tagController = {
         if(allTags === "") {
             response.status(200).json('Pas de contenu !');
         }else {
+            response.render('index');
             //console.log(allTags.rows);
-            response.json({
-                data: allTags.rows
-            });
+            // response.json({
+            //     data: allTags.rows
+            // });
         }
     }
 }
