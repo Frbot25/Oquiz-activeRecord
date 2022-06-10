@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS "level" (
   "id" serial PRIMARY KEY,
   "name" text NOT NULL,
   "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  "updated_at" TIMESTAMPTZ,
+  "updated_at" TIMESTAMPTZ
 );
 
 -- -----------------------------------------------------
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS "answer" (
   "description" text NOT NULL,
   "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   "updated_at" TIMESTAMPTZ,
-  "question_id" integer NOT NULL,
+  "question_id" integer NOT NULL
 
 );
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS "user" (
   "firstname" text NULL,
   "lastname" text NULL,
   "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  "updated_at" TIMESTAMPTZ,
+  "updated_at" TIMESTAMPTZ
 );
 
 -- -----------------------------------------------------
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS "tag" (
   "id" serial PRIMARY KEY,
   "name" text NOT NULL,
   "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  "updated_at" TIMESTAMPTZ,
+  "updated_at" TIMESTAMPTZ
 );
 
 -- -----------------------------------------------------

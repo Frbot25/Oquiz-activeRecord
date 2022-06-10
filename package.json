@@ -1,0 +1,28 @@
+{
+  "name": "oquiz-activerecord",
+  "version": "1.0.0",
+  "description": "Pas de dataMapper, on code en Active Record ! ## Refaire le MCD - Correction des erreurs du fichier MCD, le mettre à l'identique du fichier SQL : \"import_data.sql\". (Changer le nom de certaine attributs ou discriminants), nommer le MCD \"Oquiz-correction\". - ajouter `created_at` et `updated_at` dans les tables",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frbot25/Oquiz-activeRecord.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Frbot25/Oquiz-activeRecord/issues"
+  },
+  "homepage": "https://github.com/Frbot25/Oquiz-activeRecord#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "pg": "^8.7.3"
+  }
+}
