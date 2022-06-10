@@ -2,7 +2,7 @@ const client = require('../database');
 
 
 
-class Tags {
+class Quiz {
     id;
     name;
         constructor(obj ={}) {
@@ -12,20 +12,21 @@ class Tags {
             this[proname] = obj[proname];
         }
     }
-    static findAllTag() {
+    static findAllQuiz() {
         try {
-           const allTags = client.query('SELECT * FROM tag;',);
-               return allTags;
+           const allQuiz = client.query('SELECT * FROM quiz;',);
+               return allQuiz;
            
         }catch (error) {
             console.log(error);
         }
     }
-    static findOneTag(id) {
+    static findOneQuiz(id) {
         try {
             console.log('id dans model', id)
-            const oneTag = client.query('SELECT * FROM tag WHERE id=$1', [id]);
-            return oneTag;
+            //const oneQuiz = client.query('SELECT * FROM quiz WHERE id=$1', [id]);
+            const oneQuiz = client.query('SELECT * FROM quiz_has_tag JOIN quiz ON quiz.id = quiz_has_tag.quiz_id JOIN "user" ON quiz.user_id = "user".id WHERE "user".id=$1;', [id]);
+            return oneQuiz;
         } catch(error) {
             console.log(error);
         }
@@ -33,4 +34,4 @@ class Tags {
 
 };
 
-module.exports = Tags;
+module.exports = Quiz;

@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang=""fr>
+<html lang="fr">
     <head>
         <%- include('./partials/head'); %>
     </head>
@@ -16,24 +16,14 @@
       </div>
 
     <div class="row">
+        <% for( let tag in tags ) { %>
+            <div class="col-3 p-4 text-center">
+                <a class="btn btn-block btn-lg tag tag--animaux" href="/tag/<%= tags[tag].id %>">
+                    <%= tags[tag].name %>
+                </a>
+            </div>
+        <% } %>
 
-        <div class="col-3 p-4 text-center">
-            <a class="btn btn-block btn-lg tag tag--animaux" href="#">
-                animaux
-            </a>
-        </div>
-
-        <div class="col-3 p-4 text-center">
-            <a class="btn btn-block btn-lg tag tag--gastronomie" href="#">
-                gastronomie
-            </a>
-        </div>
-
-        <div class="col-3 p-4 text-center">
-            <a class="btn btn-block btn-lg tag tag--géographie" href="#">
-                géographie
-            </a>
-        </div>
 
     </div>
 
