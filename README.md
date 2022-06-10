@@ -34,6 +34,11 @@ On pourra ensuite se connecter à la BDD dans le code via l'url : `postgres://oq
 - Créer un fichier index.js
 - coder le fichier index.js pour implémenter le serveur Express.
 - Tester le serveur Express.
+Ne pas oublier le dossier `views` et tous ce qui va avec...
+
+## Commencer l'intégration avec `EJS` ou `PUG`.
+- créer un dossier `partials` dans le dossier `views`
+- tester au départ en dur avec les routes.
 
 ## Créer les fichiers pour utiliser les données
 - créer les fichiers models en fonction du nom des classes :
