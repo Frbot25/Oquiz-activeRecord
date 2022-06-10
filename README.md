@@ -2,7 +2,8 @@
 Pas de dataMapper, on code en Active Record !
 ## Refaire le MCD
 - Correction des erreurs du fichier MCD, le mettre à l'identique du fichier SQL : "import_data.sql".
-(Changer le nom de certaine attributs ou discriminants), nommer le MCD "MCD-correction".
+(Changer le nom de certaine attributs ou discriminants), nommer le MCD "Oquiz-correction".
+- ajouter `created_at` et `updated_at` dans les tables
 
 ## Le début du commencement
 Pour commencer, il faut mettre en place la base de données !

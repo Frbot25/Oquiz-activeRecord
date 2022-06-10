@@ -37,7 +37,9 @@ CREATE TABLE IF NOT EXISTS "level" (
   -- faisant référence à la sequence nommé level_id_seq, mais tout cela est automatique à la création.
   --
   "id" serial PRIMARY KEY,
-  "name" text NOT NULL
+  "name" text NOT NULL,
+  "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  "updated_at" TIMESTAMPTZ,
 );
 
 -- -----------------------------------------------------
@@ -47,7 +49,10 @@ CREATE TABLE IF NOT EXISTS "level" (
 CREATE TABLE IF NOT EXISTS "answer" (
   "id" serial PRIMARY KEY,
   "description" text NOT NULL,
-  "question_id" integer NOT NULL
+  "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  "updated_at" TIMESTAMPTZ,
+  "question_id" integer NOT NULL,
+
 );
 
 -- -----------------------------------------------------
@@ -58,7 +63,9 @@ CREATE TABLE IF NOT EXISTS "user" (
   "email" text NOT NULL,
   "password" text NOT NULL,
   "firstname" text NULL,
-  "lastname" text NULL
+  "lastname" text NULL,
+  "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  "updated_at" TIMESTAMPTZ,
 );
 
 -- -----------------------------------------------------
@@ -68,6 +75,8 @@ CREATE TABLE IF NOT EXISTS "quiz" (
   "id" serial PRIMARY KEY,
   "title" text NOT NULL,
   "description" text NULL,
+  "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  "updated_at" TIMESTAMPTZ,
   "user_id" integer NOT NULL REFERENCES "user" ("id")
 );
 
@@ -79,6 +88,8 @@ CREATE TABLE IF NOT EXISTS "question" (
   "question" text NOT NULL,
   "anecdote" text NULL,
   "wiki" text NULL,
+  "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  "updated_at" TIMESTAMPTZ,
   "level_id" integer NOT NULL REFERENCES "level" ("id"),
   -- 'Good answer',
   "answer_id" integer NOT NULL REFERENCES "answer" ("id"),
@@ -89,7 +100,9 @@ CREATE TABLE IF NOT EXISTS "question" (
 -- Table "tag"
 CREATE TABLE IF NOT EXISTS "tag" (
   "id" serial PRIMARY KEY,
-  "name" text NOT NULL
+  "name" text NOT NULL,
+  "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  "updated_at" TIMESTAMPTZ,
 );
 
 -- -----------------------------------------------------

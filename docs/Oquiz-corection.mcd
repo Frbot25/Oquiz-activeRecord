@@ -1,0 +1,18 @@
+USER: email, password, fistname, lastname, created_at, updated_at
+create, 0N USER, 11 QUIZ
+QUIZ: title, description, date_creation, created_at, updated_at
+owned, 1N QUIZ, 0N TAG
+TAG: name, created_at, updated_at
+
+belongs to, 0N QUIZ, 11 QUESTION
+
+LEVEL: name, created_at, updated_at
+defined, 0N LEVEL, 11 QUESTION
+QUESTION: question, anecdote, wiki, created_at, updated_at
+has, 0N QUESTION, 11 ANSWER
+
+
+:
+:
+belongs, 11 QUESTION, 01 ANSWER
+ANSWER: description,created_at, updated_at
