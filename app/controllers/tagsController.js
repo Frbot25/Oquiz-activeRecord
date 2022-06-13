@@ -27,10 +27,7 @@ const tagController = {
         }else {
              console.log(oneTags.rows);
             response.render('tag', {tags: oneTags.rows});
-            //console.log(allTags.rows);
-            // response.json({
-            //     data: allTags.rows
-            // });
+
         }
     }
 }

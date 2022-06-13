@@ -23,10 +23,17 @@
   },
   "homepage": "https://github.com/Frbot25/Oquiz-activeRecord#readme",
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcrypt": "^5.0.1",
+    "continuation-local-storage": "^3.2.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "pg": "^8.7.3"
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3",
+    "sanitizer": "^0.1.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"

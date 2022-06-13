@@ -7,7 +7,7 @@
 
 <%- include('./partials/header'); %>
 <main class="container">
-
+<main class="container">
     
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h2 class="h1 display-4"><%= quizInfo.title %></h2>
@@ -19,7 +19,6 @@
     <div class="row">
         <% for( let tag of quizInfo.tags ) { %>
 
-        
         <div class="col-3 p-4 text-center">
             <a class="btn btn-block btn-lg tag tag--animaux" href="/tag/<%= quizInfo.tags[tag] %>">
                 <%= tag %>
@@ -30,7 +29,7 @@
     </div>
 
     <div class="row">
-
+        <form method="post" action="">
      <% quiz.forEach(question => { %>
         
         <div class="col-12">
@@ -41,8 +40,12 @@
             <ul>
                 <% for( let answer of question.answers ) { %>
                 
-                  
-                    <li><%= answer.description %></li>
+                    <%= %>
+                    <div>
+                        <input type="radio" id="huey" name="<%= question.question_id %>" value="<%= answer %>"
+                               >
+                        <label for="huey"><%= answer %></label>
+                      </div>
                 
                 
                 <% } %>
@@ -52,7 +55,8 @@
         <% }) %>
 
     </div>
-
+    <button>Valider les réponses</button>
+</form>
 </main>
 <footer class="pt-4 my-md-5 pt-md-5 border-top">
     <%- include('./partials/footer'); %>

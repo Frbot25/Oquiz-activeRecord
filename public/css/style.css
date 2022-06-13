@@ -11,14 +11,20 @@
   .bg-primary {
     background-color: #f0f!important;
   }
-  
+  .infoFrom {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
   .form-signin {
     width: 100%;
     max-width: 420px;
     padding: 15px;
     margin: auto;
   }
-  
+  .alert {
+    color: red;
+  }
   .form-signin {
     width: 100%;
     max-width: 600px;

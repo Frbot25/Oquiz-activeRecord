@@ -6,8 +6,7 @@ class Quiz {
     id;
     name;
         constructor(obj ={}) {
-            this.id = obj.id;
-            this.name = obj.name;
+
         for (const proname in obj) {
             this[proname] = obj[proname];
         }
@@ -21,12 +20,24 @@ class Quiz {
             console.log(error);
         }
     }
-    static findOneQuiz(id) {
+    static async findOneQuiz(id) {
         try {
-            console.log('id dans model', id)
+            //console.log('id dans model', id)
             //const oneQuiz = client.query('SELECT * FROM quiz WHERE id=$1', [id]);
-            const oneQuiz = client.query('SELECT * FROM quiz_has_tag JOIN quiz ON quiz.id = quiz_has_tag.quiz_id JOIN "user" ON quiz.user_id = "user".id WHERE "user".id=$1;', [id]);
+            const oneQuiz =  await client.query('SELECT * FROM questionAndAnswers WHERE quiz_id =$1', [id]);
+            //console.log("onquiz dans model",oneQuiz.rows)
             return oneQuiz;
+        } catch(error) {
+            console.log(error);
+        }
+    }
+    static async findanswerId(id) {
+        try {
+            //console.log('id dans model', id)
+            //const oneQuiz = client.query('SELECT * FROM quiz WHERE id=$1', [id]);
+            const answers =  await client.query('SELECT answer_id FROM question WHERE quiz_id =$1', [id]);
+            console.log("onquiz dans model",answers.rows)
+            return answers;
         } catch(error) {
             console.log(error);
         }

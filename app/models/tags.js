@@ -24,7 +24,7 @@ class Tags {
     static findOneTag(id) {
         try {
             console.log('id dans model', id)
-            const oneTag = client.query('SELECT * FROM tag WHERE id=$1', [id]);
+            const oneTag = client.query('SELECT * FROM quizbyOnetag WHERE tag_id =$1', [id]);
             return oneTag;
         } catch(error) {
             console.log(error);
